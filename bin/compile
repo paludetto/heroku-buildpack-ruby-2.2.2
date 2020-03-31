@@ -11,6 +11,8 @@ begin
   LanguagePack::Instrument.trace 'compile', 'app.compile' do
     if pack = LanguagePack.detect(ARGV[0], ARGV[1])
       LanguagePack::ShellHelpers.initialize_env(ARGV[2])
+      run('apt update -y')
+      run('apt-get install libreadline6-dev -y')
       pack.topic("Compiling #{pack.name}")
       pack.log("compile") do
         pack.compile
