@@ -14,7 +14,7 @@ begin
       pack.topic("Updating apt")
       pack.run('apt update -y')
       pack.topic("Installing libreadline6-dev libreadline6")
-      pack.run('apt-get install libreadline6-dev -y')
+      pack.run('apt-get install libreadline6-dev libreadline6 -y')
       pack.topic("Compiling #{pack.name}")
       pack.log("compile") do
         pack.compile
